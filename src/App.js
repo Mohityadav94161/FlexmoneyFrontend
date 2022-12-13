@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
 
+import Form from "./Form";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./Navbar";
+import ChangeBatch from "./ChangeBatch";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+    <BrowserRouter>
+      <main>
+        <Navbar />
+        {/* <Form /> */}
+        {/* <ChangeBatch/> */}
+        <Routes>
+          <Route exact path="/changeBatch" element={<ChangeBatch />} />
+          <Route exact path="/home" element={<Form />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
